@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @Service
 public class QueryProcessor {
 
@@ -13,8 +15,9 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "Lena";
-        } else if (query.contains("what is 4 plus 18")) {
-            return "22";
+        } else if (query.contains("plus")) {
+            String[] temp = query.split(" ");
+            return "" + Arrays.stream(temp).filter(x -> x.matches("-?\\d+(\\.\\d+)?")).mapToInt(Integer::parseInt).sum();
         }
 
         else { // TODO extend the programm here
