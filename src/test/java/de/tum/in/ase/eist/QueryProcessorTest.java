@@ -47,6 +47,7 @@ class QueryProcessorTest {
 	@Test
 	void largestCorrect1(){
 		assertTrue(queryProcessor.process("which of the following numbers is the largest: 398, 64, 81, 828").contains("828"));
+		assertTrue(queryProcessor.process("7fc07ae0: which of the following numbers is the largest: 78, 58, 659, 492").contains("659"));
 	}
 
 }

@@ -20,7 +20,7 @@ public class QueryProcessor {
             return "" + Arrays.stream(temp).filter(x -> x.chars().allMatch( Character::isDigit)).mapToInt(Integer::parseInt).sum();
         } else if (query.contains("largest")){
             String[] temp = query.split(" ");
-            return "" + Arrays.stream(temp).filter(x -> x.chars().allMatch(Character::isDigit)).mapToInt(Integer::parseInt).max();
+            return "" + Arrays.stream(temp).map(x->x.replace(",", "")).filter(x -> x.chars().allMatch(Character::isDigit)).mapToInt(Integer::parseInt).max();
         }
 
         else { // TODO extend the programm here
