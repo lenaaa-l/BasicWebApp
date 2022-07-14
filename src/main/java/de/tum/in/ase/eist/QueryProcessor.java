@@ -17,7 +17,7 @@ public class QueryProcessor {
            return "Lena";
         } else if (query.contains("plus")) {
             String[] temp = query.split(" ");
-            return "" + Arrays.stream(temp).filter(x -> x.matches("-?\\d+(\\.\\d+)?")).mapToInt(Integer::parseInt).sum();
+            return "" + Arrays.stream(temp).filter(x -> x.chars().allMatch( Character::isDigit)).mapToInt(Integer::parseInt).sum();
         }
 
         else { // TODO extend the programm here

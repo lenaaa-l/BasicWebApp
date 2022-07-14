@@ -39,4 +39,9 @@ class QueryProcessorTest {
 		assertTrue(queryProcessor.process("what is 4 plus 18").contains("22"));
 	}
 
+	@Test
+	void addCorrect2(){
+		assertTrue(queryProcessor.process("9ca4d780: what is 12 plus 15").contains("27"));
+	}
+
 }
